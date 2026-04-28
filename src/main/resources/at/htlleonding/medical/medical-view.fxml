@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<VBox alignment="TOP_CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="at.htlleonding.medical.controller.MedicalController">
+    <Label style="-fx-font-weight: bold; -fx-font-size: 20px" textFill="red">+ Medical Practice +</Label>
+    <HBox alignment="TOP_CENTER" spacing="10.0">
+        <VBox alignment="TOP_CENTER" spacing="20.0">
+
+            <Label style="-fx-font-size: 15px">Waiting Room</Label>
+            <TextArea fx:id="textArea" maxWidth="200" maxHeight="200" editable="false"/>
+
+        </VBox>
+        <VBox alignment="TOP_CENTER" spacing="20.0">
+            <Label style="-fx-font-size: 15px">Patient Check-In</Label>
+            <HBox spacing="10.0">
+                <Label minWidth="100">Name:</Label>
+                <TextField fx:id="name"/>
+            </HBox>
+            <HBox spacing="10.0">
+                <Label minWidth="100">Date:</Label>
+                <HBox>
+                    <DatePicker fx:id="datePicker"/>
+                </HBox>
+
+            </HBox>
+            <HBox spacing="10.0">
+                <Label minWidth="100">Time: </Label>
+                <TextField fx:id="time"/>
+            </HBox>
+            <HBox spacing="10.0">
+                <Label minWidth="100">Emergency: </Label>
+                <CheckBox fx:id="emergency" onAction="#onCheckBoxClicked"/>
+            </HBox>
+            <HBox spacing="10.0">
+                <Label minWidth="100"/>
+                <Button onAction="#onAddButtonClicked">Add Patient</Button>
+            </HBox>
+        </VBox>
+    </HBox>
+    <VBox alignment="TOP_CENTER" spacing="10">
+        <HBox spacing="10" alignment="CENTER">
+            <Label prefWidth="160" alignment="CENTER_RIGHT">In Preparation:</Label>
+            <Label  prefWidth="200" fx:id="preparation"/>
+        </HBox>
+        <HBox spacing="10" alignment="CENTER">
+            <Label prefWidth="160" alignment="CENTER_RIGHT">Undergoing Treatment:</Label>
+            <Label   prefWidth="200" fx:id="treatment"/>
+        </HBox>
+        <HBox spacing="10" alignment="CENTER">
+            <Label prefWidth="160" alignment="CENTER_RIGHT">Patients Left:</Label>
+            <Label  prefWidth="200" fx:id="leftPatient"/>
+        </HBox>
+        <Button onAction="#onNextButtonClicked" fx:id="nextButton">Next Please!</Button>
+        <Button onAction="#onSaveButtonClicked">Save</Button>
+    </VBox>
+
+</VBox>
