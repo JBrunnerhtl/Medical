@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.text.Text?>
-<VBox alignment="TOP_CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="at.htlleonding.medical.controller.MedicalController">
+<VBox alignment="TOP_CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="at.htlleonding.medical.controller.MedicalController" fx:id="rootPane">
     <Label style="-fx-font-weight: bold; -fx-font-size: 20px" textFill="red">+ Medical Practice +</Label>
     <HBox alignment="TOP_CENTER" spacing="10.0">
         <VBox alignment="TOP_CENTER" spacing="20.0">

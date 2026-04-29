@@ -4,8 +4,12 @@ import at.htlleonding.medical.model.ChangeObserver;
 import at.htlleonding.medical.model.Patient;
 import at.htlleonding.medical.model.SerializeTool;
 import at.htlleonding.medical.model.WaitingRoom;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.VBox;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -27,6 +31,8 @@ public class MedicalController {
     private TextArea textArea;
     @FXML
     private Button nextButton;
+    @FXML
+    private VBox rootPane;
 
     private WaitingRoom room = new WaitingRoom();
 
@@ -84,6 +90,14 @@ public class MedicalController {
         if(newRoom != null) {
             room.notifyAllObservers();
         }
+
+        rootPane.addEventFilter(KeyEvent.KEY_PRESSED, e -> {
+            if(e.getCode() == KeyCode.ESCAPE) {
+                Platform.exit();
+                e.consume();
+            }
+        });
+
     }
     @FXML
     private void onAddButtonClicked() {
